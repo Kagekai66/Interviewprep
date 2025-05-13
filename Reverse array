@@ -1,0 +1,12 @@
+class Main {
+    public static void main(String[] args) {
+        int temp=1;
+       int[] arr = {2,3,4,5,3,1,4};
+       int last = arr[arr.length-1];
+       for(int i = 0;i<arr.length;i++){
+           temp= arr[i];
+           arr[i]=arr[last];
+           last=temp;
+       }
+    }
+}
