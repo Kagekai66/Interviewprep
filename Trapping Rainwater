@@ -1,0 +1,35 @@
+class Main {
+    static int TrappedWater(int[] arr){
+        int l = 0,r =arr.length-1;
+        int leftmax = 0,maxright=0;
+        int res=0;
+        
+        while(l<=r)
+        {
+            if(arr[l]<=arr[r]){
+                if(arr[l]>=leftmax){
+                leftmax = arr[l];
+                }
+                else{
+                    res +=leftmax - arr[l];
+                }
+                l++;
+            }
+            else{
+                if(arr[r]>=maxright){
+                    maxright =arr[r];
+                }
+                else{
+                    res +=maxright -arr[r];
+                }
+                r--;
+            }
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+         int arr[] = {0,1,0,2,1,0,1,3,2,1,2,1};
+         int Total =TrappedWater(arr);
+         System.out.print(Total);
+    }
+}
